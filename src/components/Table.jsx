@@ -5,10 +5,13 @@ export default function ({head,data}) {
     const [value,setValue] = useState("")
     const [filteredData,setFilteredData] = useState(data)
     const handleSearch = (e)=> {
-        const debounce = setTimeout
-        setFilteredData((prev) => {
-            return prev.filter(product => product.name.toLowercase().includes(value.trim().toLowerCase()))
+        const debounce = setTimeout(()=> {
+            clearTimeout(debounce)
+            setFilteredData((prev) => {
+            return prev.filter(product => product.name.toLowerCase().includes(value.trim().toLowerCase()))
         })
+        },500)
+        
     }
     return (
         <div>
