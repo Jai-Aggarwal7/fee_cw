@@ -1,10 +1,7 @@
-import {React } from 'react'
-import Table from './components/Table.jsx'
+import Home from './ui/Home.jsx'
 
 function App() {
-  <Table />
-
-  
+  return <Home />
 }
 
 export default App
